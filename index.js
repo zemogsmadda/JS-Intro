@@ -843,3 +843,23 @@ TEST DATA 2: DOLPHINS SCORE 85, 54, AND 41. KOALAS SCORE 23, 34, AND 27
 
 */
 
+const calcAverage = (score1,  score2,  score3) => (score1 + score2 + score3) / 3;
+let dolphinAvg = calcAverage(200, 200, 200);
+let koalaAvg = calcAverage(100, 100, 100);
+
+function checkWinner(avgDolphin, avgKoala) {
+
+    if (avgDolphin >= (2* avgKoala)) {
+        return `Dolphins won by an average of ${dolphinAvg} because ${dolphinAvg} is double of ${koalaAvg}.`;
+    } else if (avgKoala >= (2 * avgDolphin)) {
+        return `Koalas won by an average of ${koalaAvg} because ${koalaAvg} is double of ${dolphinAvg}.`;
+    } else {
+        return `Nobody wins because neither average is double of the other`;
+    }
+}
+console.log(checkWinner(dolphinAvg, koalaAvg));
+
+//MUTATION EXAMPLE
+dolphinAvg = calcAverage(200, 200, 200); 
+koalaAvg = calcAverage(400, 400, 400);
+console.log(checkWinner(dolphinAvg, koalaAvg));
