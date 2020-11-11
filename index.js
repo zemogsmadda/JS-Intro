@@ -22,6 +22,12 @@ console.log('Hello World!!!');
 18. ARROW FUNCTION 
 19. FUNCTIONS CALLING OTHER FUNCTIONS
 20. FUNCTION REVIEW
+21. ARRAY INTRODUCTION
+22. METHODS
+23. INTRODUCTION TO METHODS
+24. DOT VS BRACKET NOTATION
+25. OBJECT METHODS
+26. ITERATION. THE FOR LOOP
 */
 
 //HOW TO DECLARE A VARIABLE
@@ -842,7 +848,7 @@ TEST DATA 1: DOLPHINS SCORE 44, 23, AND 71. KOALAS SCORE 65, 54, AND 49
 TEST DATA 2: DOLPHINS SCORE 85, 54, AND 41. KOALAS SCORE 23, 34, AND 27
 
 */
-
+/*
 const calcAverage = (score1,  score2,  score3) => (score1 + score2 + score3) / 3;
 let dolphinAvg = calcAverage(200, 200, 200);
 let koalaAvg = calcAverage(100, 100, 100);
@@ -863,3 +869,351 @@ console.log(checkWinner(dolphinAvg, koalaAvg));
 dolphinAvg = calcAverage(200, 200, 200); 
 koalaAvg = calcAverage(400, 400, 400);
 console.log(checkWinner(dolphinAvg, koalaAvg));
+*/
+
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/
+
+// (21) ARRAY INTRODUCTION 
+/*
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Peter';
+
+const friends = ['Michael', 'Steven', 'Peter']; //LITERAL SYNTAX, THE BEST WAY TO WRITE AN ARRAY
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+console.log(years);
+
+console.log(friends[0]); //HOW TO ACCESS SPECIFIC DATA FROM AN ARRAY
+console.log(friends.length); //TELLS YOU HOW MANY ELEMENTS ARE IN THE ARRAY 
+console.log(friends[friends.length - 1]); //TELLS YOU WHAT THE LAST ELEMENT IN AN ARRAY IS
+
+friends[2] = 'Jay'; //HOW TO REPLACE ARRAY DATA
+console.log(friends);
+
+const paul = ['Paul', 'Gonzales', 2020 - 1996, 'web developer', friends];
+console.log(paul);
+
+
+console.log(`His name is ${paul[0]} ${paul[1]} and he works as a ${paul[3]} and his age is ${paul[2]}.` );
+
+const calcAge = function (birthYear) {
+    return 2020 - birthYear;
+}
+
+const born = [1990, 1967, 2002, 2010, 2019];
+
+const age1 = calcAge(born[0]);
+const age2 = calcAge(born[1]);
+const age3 = calcAge(born[2]);
+const age4 = calcAge(born[3]);
+
+const age5 = calcAge(born[born.length - 1]);
+console.log(age5);
+
+const ages = [calcAge(born[0]), calcAge(born[1]), calcAge(born[2])];
+console.log(ages);
+*/
+
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/
+
+// (22) METHODS
+/*
+//ADDING ELEMENTS
+const friends = ['Michael', 'Steven', 'Peter'];
+const newFriends = friends.push('Johnny'); //HOW TO ADD DATA TO THE END OF THE ARRAY
+                                            //PUTTING INTO VARIABLE WILL MAKE SHOW THE LENGTH OF THE ARRAY
+console.log(friends); 
+console.log(newFriends);
+
+friends.unshift('John'); //HOW TO ADD DATA TO THE START OF THE ARRAY
+console.log(friends);
+
+//REMOVE ELEMENTS
+friends.pop(); //REMOVES THE LAST ELEMENT IN THE ARRAY
+friends.pop(); //WILL REMOVE THE SECOND TO LAST ELEMENT AS WELL
+console.log(friends);
+
+friends.shift(); //REMOVE THE FIRST ELEMENT FROM THE ARRAY 
+console.log(friends);
+
+console.log(friends.indexOf('Steven')); //WILL TELL YOU WHAT POSITION THAT ELEMENT WILL BE IN
+
+console.log(friends.includes('Steven')); //SAME THING AS INDEX BUT USES TRUE OR FALSE
+*/
+
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/
+
+// CODING CHALLENGE
+
+/*
+STEVEN IS STILL BUILDING HIS TIP CALCULATOR, USING THE SAME RULES AS BEFORE: TIP 15% OF THE BILL IF THE BILL
+VALUE IS BETWEEN 50 AND 300, AND IF THE VALUES IS DIFFERENT, THE TIP IS 20%
+
+1. WRITE A FUNCTION 'CALCTIP' THAT TAKES ANY BILL VALUE AS AN INPUT AND RETURNS THE CORRESPONDING TIP, 
+CALCULATED BASED ON THE RULES ABOVE. USE THE FUNCTION TYPE YOU LIKE THE MOST. TEST THE FUNCTION USING A BILL VALUE OF 100.
+
+2. AND NOW LET'S USE ARRAYS! SO CREATE AN ARRAY 'BILLS CONTAINING THE TEST DATA BELOW. 
+
+3. CREATE AN ARRAY 'TIPS' CONTAINING THE TIP VALUE FOR EACH BILL, CALCULATED FROM THE FUNCTION YOU CREATED BEFORE. 
+
+4. BONUS: CREATE AN ARRAY 'TOTAL' CONTAINING THE TOTAL VALUES, SO THE BILL + TIP.
+
+TEST DATA: 125, 555, 44
+*/
+/*
+function calcTip (tip) {
+
+    const tip15 = (tip * 0.15);
+    const tip20 = (tip * 0.20);
+
+    if (tip >= 50 && tip <= 300) {
+        return tip15;
+    } else {
+        return tip20;
+    }
+}
+
+const bills = [100, 555, 44];
+
+const tips = [];
+tips.push(calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2]));
+
+const total = [];
+total.push((tips[0] + bills[0]), (tips[1] + bills[1]), (tips[2] + bills[2]));
+
+console.log(bills, tips, total);
+*/
+
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/
+
+// (23) INTRODUCTION TO OBJECTS
+
+//ORDERED DATA USE ARRAYS
+//UNORDERED DATA USE OBJECTS
+/*
+const paul = {
+    firstName: 'Paul',
+    lastName: 'Gonzales',
+    age: 2020 - 1996,
+    job: 'Web Developer',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+*/
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/
+
+// (24) DOT VS BRACKET NOTATION
+/*
+const paul = {
+    firstName: 'Paul',
+    lastName: 'Gonzales',
+    age: 2020 - 1996,
+    job: 'Web Developer',
+    friends: ['Michael', 'Peter', 'Steven', 'Jack']
+};
+
+console.log(paul.lastName); //DOT WHEN YOU HAVE FINAL DATA NAME
+console.log(paul['lastName']); //BRACKET WHEN COMPUTING 
+
+const nameKey = 'Name';
+console.log(paul['first' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Paul? Choose between firstName, lastName, age, job, and friends');
+
+if(paul[interestedIn]) {
+    console.log(paul[interestedIn]);
+} else {
+    console.log(`Wrong request! Choose between firstName, lastName, age, job, and friends `)
+}
+
+paul.location = 'Fresno';
+paul['twitter'] = '@paugito';
+console.log(paul);
+
+//CHALLENGE
+//PAUL HAS 3 FRIENDS, AND HIS BEST FRIEND IS CALLED MICHAEL
+
+const paulFriends = `${paul.firstName} has ${paul.friends.length} friends, and his best friend is called ${paul.friends[0]}.`;
+console.log(paulFriends);
+*/
+
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/
+
+// (25) OBJECT METHODS
+/*
+const paul = {
+    firstName: 'Paul',
+    lastName: 'Gonzales',
+    birthYear: 1996,
+    job: 'Web Developer',
+    friends: ['Michael', 'Peter', 'Steven', 'Jack'],
+    hasDriversLicense: true, 
+
+    //calcAge: function(birthYear) {
+       // return 2020 - birthYear;
+    //}
+
+    //calcAge: function() {
+      //  return 2020 - this.birthYear;
+    //}
+
+    calcAge: function () { 
+        this.age = 2020 - this.birthYear;
+        return this.age; //PUTTING THE CALCULATION INTO A VARIABLE WILL BE BETTER PRACTICE
+                            //THE AGE ONLY NEEDS TO BE CALCULATED ONCE
+                                //WRITING 'THIS.AGE' MEANS THAT IT IS RECORDED INSIDE THE OBJECT
+    }
+};
+
+//console.log(paul.calcAge());
+//console.log(paul['calcAge'](1996));
+    paul.calcAge();
+    console.log(paul.age);
+*/
+
+//CHALLENGE
+/*
+WRITE A METHOD CALLED SUMMARY, THIS METHOD SHOULD RETURN A STRING 
+WHICH SUMMARIZES THE DATA ABOUT PAUL
+EXAMPLE: 'JONAS IS A 46 YEAR OLD TEACHER', AND HE HAS A/NO DRIVER'S LICENSE
+*/
+
+/*
+const paulSummary = {
+    firstName: 'Paul',
+    lastName: 'Gonzales',
+    birthYear: 1996,
+    job: 'Web Developer',
+    friends: ['Michael', 'Peter', 'Steven', 'Jack'],
+    hasDriversLicense: true, 
+
+    calcAge: function () {
+        this.age = 2020 - this.birthYear;
+        return this.age;
+    },
+
+    driversLicense: function () {
+        if (this.hasDriversLicense) {
+            return 'a';
+        } else {
+            return 'no';
+        }
+    },
+
+    summary: function () {
+        this.summarizePaul = `${this.firstName} ${this.lastName} is a ${this.calcAge()} year old ${this.job} and he has ${this.driversLicense()} driver's license`;
+        return this.summarizePaul;
+    }
+}
+
+    paulSummary.summary();
+    console.log(paulSummary.summarizePaul);
+*/
+
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/
+
+// CODING CHALLENGE
+
+/* 
+LETS GO BACK TO MARK AND JOHN COMPARING THEIR BMIS! THIS TIME, LETS USE OBJECTS TO IMPLEMENT
+THE CALCULATIONS! REMEMBER: BMI = MASS / HEIGHT ** 2 = MASS / (HEIGHT * HEIGHT). (MASS IN KG AND HEIGHT IN M)
+
+1. FOR EACH OF THEM, CREATE AN OBJECT WITH PROPERTIES FOR THEIR FULL NAME, MASS, AND HEIGHT (MARK MILLER AND JOHN SMITH)
+
+2. CREATE A 'CALCBMI' METHOD ON EACH OBJECT TO CALCULATE THE BMI (THE SAME METHOD ON BOTH OBJECTS). STORE THE BMI
+VALUE TO A PROPERTY, AND ALSO RETURN IT FROM THE METHOD.
+
+3. LOG TO THE CONSOLE WHO HAS THE HIGHER BMI, TOGETHER WITH THE FULL NAME AND THE RESPECTIVE BMI. 
+EXAMPLE: 'JOHNS BMI (28.3) IS HIGHER THAN MARK'S (23.9)!'
+
+TEST DATA: MARK WEIGHS 78KG AND IS 1.69M TALL
+            JOHN WEIGHS 92KG AND 1.95M TALL
+*/
+/*
+const mark = {
+    firstName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    massUnit: 'kg',
+    heightUnit: 'meter',
+
+    calcBMI : function() {
+        this.markBMI = this.mass / (this.height ** 2);
+        return this.markBMI;
+    }
+}
+
+const john = {
+    firstName: 'John Smith',
+    mass: 78,
+    height: 1.7,
+    massUnit: 'kg',
+    heightUnit: 'meter',
+    
+    calcBMI : function() {
+        this.johnBMI = this.mass / (this.height ** 2);
+        return this.johnBMI;
+    }
+}
+
+mark.calcBMI();
+john.calcBMI();
+
+function whoHasHigherBMI() {
+    
+    if (mark.markBMI > john.johnBMI) {
+        return `${mark.firstName} has a higher BMI at ${mark.markBMI} ${mark.massUnit}/${mark.heightUnit}^2 compared to ${john.johnBMI} ${john.massUnit}/${john.heightUnit}^2!`
+    } else if (mark.markBMI === john.johnBMI) {
+        return `Both have the same BMI`
+    }
+     else {
+        return `${john.firstName} has a higher BMI at ${john.johnBMI} ${john.massUnit}/${john.heightUnit}^2 compared to ${mark.markBMI} ${mark.massUnit}/${mark.heightUnit}^2!`
+    }
+}
+
+whoHasHigherBMI();
+console.log(whoHasHigherBMI());
+*/
+
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/ 
+/*----------------------------------------------------------------------------------------------------*/
+
+// (26) ITERATION. THE FOR LOOP 
+
+/*
+console.log('lifting weights repetition 1');
+console.log('lifting weights repetition 2');
+console.log('lifting weights repetition 3');
+console.log('lifting weights repetition 4');
+console.log('lifting weights repetition 5');
+*/
+
+//FOR LOOP KEEPS RUNNING WHILE CONDITION IS TRUE
+//ANATOMY OF A FOR LOOP: for(intial starting point ; condition ;)
+for(let rep = 1; rep <= 10; rep = rep++) {
+    console.log('lifting weights repetition 1');
+}
